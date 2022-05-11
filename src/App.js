@@ -1,15 +1,21 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import CardsList from './components/CardsList';
+import Card from './components/Card';
+import Footer from './components/Footer';
+import data from './shared/data';
 
-function App() {
+export default function App() {
+  const cards = data.map((item, index) => {
+    console.log(item);
+    return <Card key={index} item={item} />;
+  });
+
   return (
     <div>
       <Navbar />
-      <CardsList />
+      {cards}
+      <Footer />
     </div>
   );
 }
-
-export default App;
